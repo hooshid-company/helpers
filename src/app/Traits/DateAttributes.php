@@ -13,7 +13,7 @@ trait DateAttributes
             ?? $this->getDateFormat();
 
         $this->attributes[$attribute] = $value && ! $value instanceof Carbon
-            ? Carbon::createFromFormat($format, $value)
+            ? Carbon::createFromFormat('!'.$format, $value)
             : $value;
     }
 }
